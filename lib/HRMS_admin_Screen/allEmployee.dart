@@ -215,7 +215,7 @@ class _AllEmployeePageState extends State<AllEmployeePage> {
                       borderRadius: BorderRadius.circular(100)
                     ),
                     child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                      padding:   EdgeInsets.symmetric(horizontal: 8.0),
                       child: DropdownButton(
                         underline: Text(''),
                         
@@ -231,9 +231,9 @@ class _AllEmployeePageState extends State<AllEmployeePage> {
                         },
                         items: [
 
-                          DropdownMenuItem(child: Text('By branch'),value: 0,),
-                        DropdownMenuItem(child: Text('By branch'),value: 1,),
-                        DropdownMenuItem(child: Text('By branch'),value: 2,)
+                          DropdownMenuItem(child: Text('By brancha'),value: 0,),
+                        DropdownMenuItem(child: Text('By branchb'),value: 1,),
+                        DropdownMenuItem(child: Text('By branchc'),value: 2,)
 
                       ],
                       ),

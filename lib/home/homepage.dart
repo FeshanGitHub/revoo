@@ -6,6 +6,7 @@ import 'package:revoo/HRMS_admin_Screen/allDepartmetns.dart';
 import 'package:revoo/HRMS_admin_Screen/employeecheckin.dart';
 import 'package:revoo/home/admindashboard.dart';
 
+import '../Controllers/authcontroller.dart';
 import '../HRMS_admin_Screen/Shifts.dart';
 import '../HRMS_admin_Screen/acceptleaverequest.dart';
 import '../HRMS_admin_Screen/allEmployee.dart';
@@ -107,13 +108,9 @@ class _HomePageMainState extends State<HomePageMain> {
                       backgroundImage: AssetImage('asset/profile.jfif'),
                       radius: 30,
                     ),
-
                     SizedBox(width: 20,),
-
                     Align(
-
                       alignment: Alignment.bottomLeft,
-
                       child: Padding(
                         padding: const EdgeInsets.only(right: 20.0),
                         child: Column(
@@ -129,8 +126,6 @@ class _HomePageMainState extends State<HomePageMain> {
                                   )),
                             ),
                             Container(
-
-
                                 child: Text('Role/Designation',style: TextStyle(fontSize: 18,color: kblue),
                                     textAlign: TextAlign.left
                                 )),
@@ -226,6 +221,8 @@ class _HomePageMainState extends State<HomePageMain> {
                   Expanded(
                     child: InkWell(
                       onTap:(){
+                        
+                        Get.back();
 
                       },
                       child: Padding(
@@ -247,6 +244,9 @@ class _HomePageMainState extends State<HomePageMain> {
                   Expanded(
                     child: InkWell(
                       onTap: (){
+                        name == "Logout" ?
+                        AuthController.instance.logout()
+                            : print('');
 
                       },
                       child: Padding(

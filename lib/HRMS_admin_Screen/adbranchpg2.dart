@@ -3,7 +3,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
-
 import 'package:revoo/HRMS_admin_Screen/adbranchpg4.dart';
 
 import '../constants/constants.dart';
@@ -28,6 +27,8 @@ class _DBcrudState extends State<AddBranches> {
   Widget build(BuildContext context) {
 
     var firestore =  FirebaseFirestore.instance;
+
+
 
 
     return SafeArea(
@@ -69,6 +70,8 @@ class _DBcrudState extends State<AddBranches> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       TextFormField(
+
+
                         controller: name,
                         decoration: InputDecoration(
                             filled: true,
@@ -196,21 +199,20 @@ class _DBcrudState extends State<AddBranches> {
                       ),
                       InkWell(
                         onTap: () async {
-                        await firestore.collection('Branch').add(
+                        await firestore.collection('Company').doc('jdeN29JAU0tlAscbbdFx').collection('Branch').add(
                            {
-                             'branch_name':name.text,
-                             'address':address.text,
-                             'location' : location.text,
-                             'cid' : ""
+                             'Branch Name':name.text,
+                             'Address':address.text,
+                             'Location' : location.text,
                            }
                          ).then((value) async {
-                          await firestore.collection('Branch').doc(value.id).update({
-                            'bid' :value.id
+                          await firestore.collection('Company').doc('jdeN29JAU0tlAscbbdFx').collection('Branch').doc(value.id).update({
+                            'bid' : value.id
                           });
                         });
-                     var docSnap =  await firestore.collection('Branch').doc('etsPUmBE29lqbbhR4G2C').get();
+                     var docSnap =  await firestore.collection('Company').doc('jdeN29JAU0tlAscbbdFx').collection('Branch').doc('qOhsmhAMWFKFBcP6EtPx').get();
                      print(docSnap.data());
-                        Get.to(HomePageMain());
+                          Get.to(HomePageMain());
                         },
                         child: Container(
                           width: 110,

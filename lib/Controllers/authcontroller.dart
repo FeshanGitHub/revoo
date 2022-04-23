@@ -10,6 +10,8 @@ import '../Login/yourapps.dart';
 
 class AuthController extends GetxController{
   //AuthController.instance
+
+
   static AuthController instance =  Get.find();
   //email,password,name
   late Rx<User?> _user;
@@ -40,8 +42,7 @@ class AuthController extends GetxController{
       backgroundColor: Colors.grey,
       snackPosition: SnackPosition.BOTTOM,
           titleText: Text("Account Creation Failed"),
-        messageText: Text(e.toString(),style: TextStyle(color: Colors.grey),
-        ),
+        messageText: Text(e.toString(),style: TextStyle(color: Colors.grey),),
       );
     }
   }
